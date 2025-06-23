@@ -4,7 +4,6 @@ import { fetchRecipes } from "@/utility/recipeControllers";
 import { useAuth } from "@/context/AuthContext";
 import { getUserLikedRecipes } from "@/services/recipeService";
 // Components
-import Filters from "@/components/home/Filters";
 import RecipeCard from "@/components/home/RecipeCard";
 
 export default function Home() {

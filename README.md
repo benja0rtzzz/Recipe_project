@@ -1,54 +1,106 @@
-# React + TypeScript + Vite
+# RecipeApp
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A full-featured recipe web application built with Bun, TypeScript, and React, featuring user authentication, likes, reviews, "to cook" and "cooked" lists, and a personalized dashboard.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- User Authentication: Sign up and log in to access personalized features.
+- Browse Recipes: Fetch and display recipes from the Spoonacular API.
+- Like Recipes: Mark recipes as favorites.
+- Reviews: Leave and view reviews for each recipe.
+- To Cook List: Add recipes you plan to cook.
+- Cooked History: Track recipes you've cooked.
+- Dashboard: View categorized lists of liked, to-cook, and cooked recipes.
+- Optimistic UI Updates: Instant UI feedback on likes, saves, and cooking actions.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Technologies
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- Bun: Runtime and package manager
+- TypeScript: Strongly typed JavaScript
+- React: UI library
+- Tailwind CSS: Utility-first styling
+- React Router: Client-side routing
+- Firebase Firestore: Backend data storage
+- Spoonacular API: Recipe data source
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+1. Clone the repo:
+   git clone https://github.com/yourusername/recipe-app.git
+   cd recipe-app
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+2. Install dependencies:
+   bun install
+
+3. Create a .env file based on .env.example:
+   VITE_SPOONACULAR_API_KEY=your_spoonacular_api_key
+
+4. Start the development server:
+   bun dev
+
+## Environment Variables
+
+Required environment variables include:
+
+- VITE_SPOONACULAR_API_KEY: Your Spoonacular API key
+- Firebase environment variables (example):
+  - VITE_FIREBASE_API_KEY
+  - VITE_FIREBASE_AUTH_DOMAIN
+  - VITE_FIREBASE_PROJECT_ID
+  - VITE_FIREBASE_STORAGE_BUCKET
+  - VITE_FIREBASE_MESSAGING_SENDER_ID
+  - VITE_FIREBASE_APP_ID
+
+## Folder Structure
+
+recipe-app/
+├── public/
+├── src/
+│   ├── components/        Reusable UI components
+│   ├── context/           React Context for auth
+│   ├── services/          API and Firestore service functions
+│   ├── types/             TypeScript type definitions
+│   ├── utility/           Helpers/controllers
+│   ├── pages/             Route components (Home, RecipeDetails, Dashboard)
+│   ├── App.tsx
+│   └── main.tsx
+├── .env.example
+├── bun.lockb
+├── tsconfig.json
+├── tailwind.config.js
+└── README.md
+
+## Usage
+
+1. Browse recipes on the homepage.
+2. Click a recipe card to view details, like, review, or add to your lists.
+3. Sign in to manage your favorites, to-cook list, and cooked history.
+4. Dashboard shows all your saved recipes in categorized sections.
+
+## Scripts
+
+- bun dev: Run development server
+- bun build: Build for production
+- bun start: Start production server
+
+## Deployment
+
+1. Build the app:
+   bun build
+
+2. Deploy to your preferred hosting platform (e.g., Vercel, Netlify).
+   Make sure environment variables are set up correctly on the platform.
+
+## Contributing
+
+1. Fork the repo
+2. Create a new branch: git checkout -b feature/YourFeature
+3. Commit your changes: git commit -m 'feat: Add YourFeature'
+4. Push to the branch: git push origin feature/YourFeature
+5. Open a pull request
+
+## License
+
+MIT License © Your Name
