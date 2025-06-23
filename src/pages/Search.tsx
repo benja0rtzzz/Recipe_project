@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import type { RecipeSearchFormatted } from "@/types/Recipe";
 
 import { autoCompleteSearch } from "@/utility/recipeControllers";

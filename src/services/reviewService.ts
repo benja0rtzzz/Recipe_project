@@ -5,7 +5,6 @@ import {
   query,
   setDoc,
   doc,
-  deleteDoc,
 } from "firebase/firestore";
 import { getUserUserName } from "@/services/userService";
 import { db } from "@/services/firebaseConfig";
